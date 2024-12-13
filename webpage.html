@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tax and Payment Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Tax and Payment Tracker</h1>
+    </header>
+    <main>
+        <section id="form-section">
+            <h2>Add Record</h2>
+            <form id="record-form">
+                <label for="category">Category:</label>
+                <input type="text" id="category" name="category" required>
+
+                <label for="amount">Amount:</label>
+                <input type="number" id="amount" name="amount" required>
+
+                <label for="record_date">Date:</label>
+                <input type="date" id="record_date" name="record_date" required>
+
+                <label for="record_type">Type:</label>
+                <select id="record_type" name="record_type">
+                    <option value="Expense">Expense</option>
+                    <option value="Revenue">Revenue</option>
+                </select>
+
+                <label for="description">Description:</label>
+                <textarea id="description" name="description"></textarea>
+
+                <button type="submit">Add Record</button>
+            </form>
+        </section>
+
+        <section id="records-section">
+            <h2>Records</h2>
+            <table id="records-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Category</th>
+                        <th>Amount</th>
+                        <th>Date</th>
+                        <th>Type</th>
+                        <th>Description</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Dynamic Content -->
+                </tbody>
+            </table>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Tax and Payment Tracker</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,14 @@
+-- SQL Schema for Tax and Payment Tracker
+
+CREATE TABLE finance_records (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    category TEXT NOT NULL,
+    amount REAL NOT NULL,
+    record_date TEXT NOT NULL,
+    record_type TEXT NOT NULL CHECK (record_type IN ('Expense', 'Revenue')),
+    description TEXT,
+    UNIQUE (category, record_date, record_type) -- Ensures unique combination of category, date, and type
+);
+
+-- Example Index for Faster Queries
+CREATE INDEX idx_record_date ON finance_records (record_date);
